@@ -22,7 +22,7 @@
 
     <h2>Student Registration Form</h2>
 
-    <form>
+    <form id="registrationForm"></form>
 
         <label for="fullname">Full Name:</label>
         <input type="text" id="fullname" name="fullname" required>
@@ -96,6 +96,18 @@
     <p>Copyright &copy; 2026 Dynamic Student Portal.</p>
 </footer>
 
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+        let name = document.getElementById("fullname").value;
+
+        if (name.trim() === "") {
+            event.preventDefault();
+            alert("Please enter your full name");
+        }
+
+    });
+</script>
 
 </body>
 </html>
